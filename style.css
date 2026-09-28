@@ -1,0 +1,252 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f1f9;
+  color: #212322;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background-color: #6802c1;
+  color: #ffffff;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.encabezado h1 {
+  margin: 0 0 4px;
+}
+
+.encabezado p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===== Layout ===== */
+.contenedor {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+}
+
+.panel {
+  background-color: #ffffff;
+  border: 1px solid #e3dcef;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.panel.ancho {
+  grid-column: 1 / -1;
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: #6802c1;
+  font-size: 18px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #555;
+  font-weight: normal;
+}
+
+/* ===== Formulario ===== */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 0 4px;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #6802c1;
+  border-color: #6802c1;
+}
+
+.btn-reservar {
+  margin-top: 16px;
+  padding: 10px;
+  background-color: #6802c1;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-reservar:hover {
+  background-color: #52019a;
+}
+
+/* ===== Mensajes ===== */
+.mensaje {
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.mensaje.error {
+  background-color: #fde2e2;
+  color: #a4161a;
+  border-left: 5px solid #a4161a;
+}
+
+.mensaje.exito {
+  background-color: #dcf5e3;
+  color: #1b6b35;
+  border-left: 5px solid #1b6b35;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ===== Disponibilidad ===== */
+.resumen {
+  margin: 0 0 8px;
+  font-weight: bold;
+}
+
+.leyenda {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.punto {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin: 0 4px 0 10px;
+  vertical-align: middle;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.tabla-disp {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tabla-disp th,
+.tabla-disp td {
+  border: 1px solid #ffffff;
+  padding: 8px 4px;
+}
+
+.tabla-disp th {
+  background-color: #efe8f8;
+}
+
+.libre {
+  background-color: #b7e4c7;
+  color: #1b6b35;
+  cursor: pointer;
+}
+
+.libre:hover {
+  background-color: #95d5b2;
+}
+
+.ocupada {
+  background-color: #f4a5a5;
+  color: #7a1010;
+  font-weight: bold;
+}
+
+td.ocupada {
+  cursor: pointer;
+}
+
+/* Celda libre elegida con clic */
+.seleccionada {
+  outline: 3px solid #6802c1;
+  outline-offset: -3px;
+  font-weight: bold;
+}
+
+.ayuda {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* ===== Tabla de reservas ===== */
+.tabla-reservas {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-reservas th {
+  background-color: #6802c1;
+  color: #ffffff;
+  text-align: left;
+  padding: 10px;
+}
+
+.tabla-reservas td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-reservas tbody tr:hover {
+  background-color: #f8f5fc;
+}
+
+.btn-eliminar {
+  background-color: #d62828;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #a4161a;
+}
+
+.vacio {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}

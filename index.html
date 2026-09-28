@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva Aula</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1>Reserva Aula</h1>
+    <p>Sistema de reservas de aulas académicas</p>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- Formulario de reserva -->
+    <section class="panel">
+      <h2>Nueva reserva</h2>
+      <form id="form-reserva" novalidate>
+        <label for="aula">Aula *</label>
+        <select id="aula">
+          <option value="">-- Selecciona un aula --</option>
+          <!-- Las opciones se generan desde script.js -->
+        </select>
+
+        <label for="fecha">Fecha *</label>
+        <input type="date" id="fecha">
+
+        <label for="horario">Horario *</label>
+        <select id="horario">
+          <option value="">-- Selecciona un horario --</option>
+          <!-- Las opciones se generan desde script.js -->
+        </select>
+
+        <label for="actividad">Actividad *</label>
+        <input type="text" id="actividad" placeholder="Ej. Clase de Ingeniería Web">
+
+        <button type="submit" class="btn-reservar">Reservar</button>
+      </form>
+
+      <!-- Mensajes de error / éxito -->
+      <p id="mensaje" class="mensaje oculto"></p>
+    </section>
+
+    <!-- Indicadores de disponibilidad -->
+    <section class="panel">
+      <h2>Disponibilidad <span id="fecha-disponibilidad" class="subtitulo"></span></h2>
+      <p id="resumen-disponibilidad" class="resumen"></p>
+      <div class="leyenda">
+        <span class="punto libre"></span> Libre
+        <span class="punto ocupada"></span> Ocupada
+      </div>
+      <div class="tabla-scroll">
+        <table class="tabla-disp">
+          <tbody id="disponibilidad"></tbody>
+        </table>
+      </div>
+      <p class="ayuda">Tip: haz clic en una celda libre para rellenar el formulario.</p>
+    </section>
+
+    <!-- Tabla de reservas -->
+    <section class="panel ancho">
+      <h2>Reservas registradas (<span id="contador">0</span>)</h2>
+      <div class="tabla-scroll">
+        <table class="tabla-reservas">
+          <thead>
+            <tr>
+              <th>Aula</th>
+              <th>Fecha</th>
+              <th>Horario</th>
+              <th>Actividad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-reservas"></tbody>
+        </table>
+      </div>
+      <p id="sin-reservas" class="vacio">No hay reservas registradas.</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
